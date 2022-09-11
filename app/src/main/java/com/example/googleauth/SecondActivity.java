@@ -15,13 +15,13 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class SecondActivity extends AppCompatActivity {
-
-    GoogleSignInOptions gso;
-    GoogleSignInClient gsc;
     Button signOutBtn;
     TextView name, email;
+    private FirebaseAuth mAuth =  FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,32 +32,19 @@ public class SecondActivity extends AppCompatActivity {
         name = findViewById(R.id.name);
         email = findViewById(R.id.email);
 
-        gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestEmail().build();
-        gsc = GoogleSignIn.getClient(this, gso);
-
-        GoogleSignInAccount acc = GoogleSignIn.getLastSignedInAccount(this);
-        if (acc != null) {
-            String personName = acc.getDisplayName();
-            String personEmail = acc.getEmail();
+        FirebaseUser user =  FirebaseAuth.getInstance().getCurrentUser();
+        if (mAuth.getCurrentUser() != null) {
+            String personName = user.getDisplayName();
+            String personEmail = user.getEmail();
             name.setText(personName);
             email.setText(personEmail);
         }
 
-        signOutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                signOut();
-            }
-        });
+        signOutBtn.setOnClickListener(view -> signOut());
     }
 
     void signOut() {
-        gsc.signOut().addOnCompleteListener(new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                finish();
-                startActivity(new Intent(SecondActivity.this, MainActivity.class));
-            }
-        });
+        FirebaseAuth.getInstance().signOut();
+        startActivity(new Intent(SecondActivity.this, MainActivity.class));
     }
 }
