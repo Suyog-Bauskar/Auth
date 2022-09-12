@@ -15,11 +15,64 @@
       },
       "oauth_client": [
         {
-          "client_id": "818207535944-3p9m6n8736b28m875bg5amolel9r6kge.apps.googleusercontent.com",
+          "client_id": "818207535944-dhtv15ed0nf40r8ijqvfin0gbba1g2ol.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.googleauth",
+            "certificate_hash": "6a5357adfdcec87e77c7a2ad8bfb0403e5372e1d"
+          }
+        },
+        {
+          "client_id": "818207535944-q0q08hghn2s43089u41smd7n55rep0u1.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.googleauth",
             "certificate_hash": "780c5ea5d1650b688b4b58748bc974b946884548"
+          }
+        },
+        {
+          "client_id": "818207535944-tcbvhn8rm9c7g2recblafeadvo0og9u8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.googleauth",
+            "certificate_hash": "9f55e441df791a222df2210bfa31f191b91227b9"
+          }
+        },
+        {
+          "client_id": "818207535944-g0umeus2g1lpavgt390p4tgl7bg29abu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABmF8Cr_lowPcKi0xSPQtGPLGAWc0eyZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818207535944-g0umeus2g1lpavgt390p4tgl7bg29abu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818207535944:android:6ebfe0ec40e87461a4b97d",
+        "android_client_info": {
+          "package_name": "com.suyogbauskar.googleauth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818207535944-992vhok5isj63fva366uit6k2ttpvb1h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.suyogbauskar.googleauth",
+            "certificate_hash": "9f55e441df791a222df2210bfa31f191b91227b9"
           }
         },
         {
